@@ -11,7 +11,6 @@ RUN npm run test
 
 
 FROM alpine:edge
-RUN apk add --no-cache curl
 COPY --from=test-env /app/wait-for /wait-for
 ENTRYPOINT ["/wait-for"]
 CMD ["--help"]
